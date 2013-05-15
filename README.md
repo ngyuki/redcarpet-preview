@@ -4,7 +4,7 @@
 ```console
 $ git clone https://github.com/ngyuki/redcarpet-preview.git
 $ cd redcarpet-preview
-$ bundle install --path=vendor/bundle
+$ bundle install --deployment
 ```
 
 Server start for development mode.
