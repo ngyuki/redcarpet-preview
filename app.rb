@@ -1,9 +1,11 @@
-require 'rubygems'
+# coding: utf-8
+
 require 'sinatra'
-require './markdown'
+require './lib/markdown'
 
 if development?
   require 'sinatra/reloader'
+  also_reload 'lib/**/*.rb'
 end
 
 helpers do
@@ -18,7 +20,5 @@ get '/' do
 end
 
 post '/markdown/raw' do
-  #response['Access-Control-Allow-Origin'] = '*'
-  request.body.rewind
-  markdown request.body.read
+  markdown request.body.read.force_encoding Encoding::UTF_8
 end
