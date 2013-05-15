@@ -65,34 +65,46 @@ $(function(){
 	$.event.props.push('dataTransfer');
 	
 	// ドラッグアンドドロップ
-	$('html').on('drop dragover dragenter', function(ev){
-		ev.stopPropagation();
-		ev.preventDefault();
-	})
-	.on('drop', function(ev){
-		if (ev.dataTransfer && ev.dataTransfer.files)
-		{
-			var files = ev.dataTransfer.files;
-			var textfile = null;
+	$('html')
+		.on('drop dragenter dragleave dragover', function(ev){
+			ev.preventDefault();
+		})
+		.on('dragenter', function(ev){
+			$('#droptarget').show();
+		})
+	;
+	
+	$('#droptarget')
+		.on('dragleave', function(ev){
+			$(this).hide();
+		})
+		.on('drop', function(ev){
+			$(this).hide();
 			
-			for (var i=0, len=files.length; i<len; i++)
+			if (ev.dataTransfer && ev.dataTransfer.files)
 			{
-				if (isMarkdownLike(files[i]))
+				var files = ev.dataTransfer.files;
+				var textfile = null;
+				
+				for (var i=0, len=files.length; i<len; i++)
 				{
-					textfile = files[i];
-					break;
+					if (isMarkdownLike(files[i]))
+					{
+						textfile = files[i];
+						break;
+					}
+				}
+				
+				if (textfile)
+				{
+					readAsText(textfile).done(function(ev){
+						$("#source").val(ev.target.result);
+						showPreview();
+					});
 				}
 			}
-			
-			if (textfile)
-			{
-				readAsText(textfile).done(function(ev){
-					$("#source").val(ev.target.result);
-					showPreview();
-				});
-			}
-		}
-	});
+		})
+	;
 	
 	// 遅延タイムアウト
 	function delayTimeout(msec)
