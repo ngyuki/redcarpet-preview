@@ -7,6 +7,8 @@ gem 'thin'
 group :development do
   gem 'foreman'
   gem 'sinatra-contrib'
+  gem 'guard'
+  gem 'guard-test'
 end
 
 gem 'redcarpet'
