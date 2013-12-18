@@ -1,14 +1,17 @@
 # coding: utf-8
 
-$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib')))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__)))
 
 require 'sinatra'
+require 'rubypython'
 require 'lib/markdown'
 
 if development?
   require 'sinatra/reloader'
   also_reload 'lib/**/*.rb'
 end
+
+RubyPython.configure python_exe: 'python2.6'
 
 helpers do
   def markdown(text)

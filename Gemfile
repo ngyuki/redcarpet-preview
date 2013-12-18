@@ -14,3 +14,4 @@ end
 gem 'redcarpet'
 gem 'coderay'
 gem 'pygments.rb'
+gem 'rubypython', '0.5.1'
