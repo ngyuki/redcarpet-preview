@@ -13,3 +13,4 @@ end
 
 gem 'redcarpet'
 gem 'coderay'
+gem 'pygments.rb'

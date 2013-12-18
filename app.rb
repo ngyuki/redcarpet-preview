@@ -1,7 +1,9 @@
 # coding: utf-8
 
+$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib')))
+
 require 'sinatra'
-require './lib/markdown'
+require 'lib/markdown'
 
 if development?
   require 'sinatra/reloader'
@@ -13,6 +15,11 @@ helpers do
     markdown = Markdown.new
     markdown.to_html text
   end
+
+  def markdown_pygments(text)
+    markdown = Markdown.new(Highlight::Pygments.new)
+    markdown.to_html text
+  end
 end
 
 get '/' do
@@ -21,4 +28,8 @@ end
 
 post '/markdown/raw' do
   markdown request.body.read.force_encoding Encoding::UTF_8
+end
+
+post '/markdown/pygments' do
+  markdown_pygments request.body.read.force_encoding Encoding::UTF_8
 end
