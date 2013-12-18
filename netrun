@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -eu
+
+command=( bundle exec "$@" )
+
+addr="${SSH_CLIENT%% *}"
+port=12345
+
+echo "Command: ${command[@]}"
+echo "Connect $addr:$port"
+
+echo "Run Command..."
+"${command[@]}" &&:
+
+echo
+echo "Waiting..."
+
+nc "$addr" "$port" |
+while read; do
+    while read -t 0.3; do
+        :
+    done
+    echo
+    echo "Run Command..."
+    "${command[@]}" &&:
+done
