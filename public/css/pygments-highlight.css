@@ -110,3 +110,15 @@ table.highlighttable tr td pre {
     font-size: 12px;
     line-height: 16px;
 }
+
+/**
+ * fix by @ngyuki
+ */
+
+.wiki table.highlighttable {
+    margin: 0;
+}
+
+p {
+    margin: 1.2em 0;
+}
