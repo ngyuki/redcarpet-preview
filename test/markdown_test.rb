@@ -1,10 +1,9 @@
 # coding: utf-8
 
-require File.expand_path(File.join(File.dirname(__FILE__), "helper"))
+require File.expand_path('./helper', File.dirname(__FILE__))
 require 'lib/markdown'
 
 class MarkdownTest < Test::Unit::TestCase
-  include Rack::Test::Methods
 
   def setup
   end

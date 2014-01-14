@@ -1,11 +1,10 @@
 # coding: utf-8
 
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "helper"))
+require File.expand_path('../helper', File.dirname(__FILE__))
 require 'lib/highlight/coderay'
 
 module Highlight
   class CoderayTest < Test::Unit::TestCase
-    include Rack::Test::Methods
 
     def test_highlight
       obj = Highlight::Coderay.new
