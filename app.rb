@@ -31,21 +31,3 @@ post '/markdown/rouge' do
   markdown = Markdown.new(Highlight::Rouge.new)
   markdown.to_html request.body.read.force_encoding Encoding::UTF_8
 end
-
-get '/css/coderay.highlight.css' do
-  content_type "text/css"
-  highlight = Highlight::Coderay.new
-  highlight.css
-end
-
-get '/css/pygments.highlight.css' do
-  content_type "text/css"
-  highlight = Highlight::Pygments.new
-  highlight.css
-end
-
-get '/css/rouge.highlight.css' do
-  content_type "text/css"
-  highlight = Highlight::Rouge.new
-  highlight.css
-end
