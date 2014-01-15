@@ -21,7 +21,9 @@ $ RACK_ENV=production bundle exec foreman start
 
 ## Demo
 
-- [Redcarpet Preview - Heroku](http://redcarpet-preview.herokuapp.com/)
+- [Redcarpet Preview with Coderay  - Heroku](http://redcarpet-preview.herokuapp.com/)
+- [Redcarpet Preview with Pygments - Heroku](http://redcarpet-preview.herokuapp.com/pygments.html)
+- [Redcarpet Preview with Rouge    - Heroku](http://redcarpet-preview.herokuapp.com/rouge.html)
 
 ## Deploy to heroku
 
