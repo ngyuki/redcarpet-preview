@@ -1,8 +1,9 @@
 {
   "devDependencies": {
+    "grunt": "~0.4.2",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-shell": "~0.6.1",
-    "grunt": "~0.4.2",
-    "grunt-este-watch": "~0.1.15"
+    "grunt-este-watch": "~0.1.15",
+    "grunt-remote-task": "git://github.com/ngyuki/grunt-remote-task"
   }
 }

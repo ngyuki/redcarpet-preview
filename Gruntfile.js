@@ -3,8 +3,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-este-watch');
     grunt.loadNpmTasks('grunt-shell');
-
-    grunt.loadTasks('tasks/');
+    grunt.loadNpmTasks('grunt-remote-task');
 
     grunt.initConfig({
         watch: {
