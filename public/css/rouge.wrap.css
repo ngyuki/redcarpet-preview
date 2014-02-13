@@ -1,11 +1,11 @@
-.wiki .highlightwrap {
+.highlightwrap {
     margin: 1em 1em 1em 1.6em;
     padding: 0;
     overflow-x: auto;
     border: 1px solid #dadada;
 }
 
-.wiki .highlightwrap table {
+.highlightwrap table {
     margin: 0;
     padding: 0;
     border: 0px none;
@@ -14,30 +14,30 @@
     background-color: #fafafa;
 }
 
-.wiki .highlightwrap table tbody tr td pre {
+.highlightwrap table tbody tr td pre {
     font-family: "Menlo", "Liberation Mono", "Consolas", "Courier New", "andale mono", "lucida console", monospace;
     font-size: 12px;
 }
 
-.wiki .highlightwrap table td.gutter {
+.highlightwrap table td.gutter {
     padding: 4px 4px 4px 8px;
     background: #eee;
     border: 0px none;
     width: 14px;
 }
 
-.wiki .highlightwrap table td.gutter pre {
+.highlightwrap table td.gutter pre {
     background: #eee;
     text-align: right;
 }
 
-.wiki .highlightwrap table td.code {
+.highlightwrap table td.code {
     border: 0px solid #e2e2e2;
     padding: 0 8px;
     background: #fafafa;
 }
 
-.wiki .highlightwrap table tr td pre {
+.highlightwrap table tr td pre {
     border: 0px solid #e2e2e2;
     margin: 0px;
     padding: 0px;
